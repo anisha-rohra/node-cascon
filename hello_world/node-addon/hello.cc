@@ -1,18 +1,18 @@
-#include <node.h>
-#include <v8.h>
+#include <>
+#include <>
 
-using namespace v8;
 
-void Method(const v8::FunctionCallbackInfo<Value>& args) {
-  Isolate* isolate = Isolate::GetCurrent();
-  HandleScope scope(isolate);
-  args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
+
+void Method() {
+
+
+
 }
 
-void Init(Handle<Object> exports) {
-  Isolate* isolate = Isolate::GetCurrent();
-  exports->Set(String::NewFromUtf8(isolate, "hello"),
-      FunctionTemplate::New(isolate, Method)->GetFunction());
+void Init() {
+
+
+
 }
 
-NODE_MODULE(hello, Init)
+NODE_MODULE()
