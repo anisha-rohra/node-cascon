@@ -1,12 +1,12 @@
-#include <>
+#include <nan.h>
 
-void Method() {
-  
+void Method(const Nan::FunctionCallbackInfo<v8::Value>& info) {
+  info.GetReturnValue().Set(Nan::New("world").ToLocalChecked());
 }
 
-void Init() {
-
-
+void Init(v8::Local<v8::Object> exports) {
+  exports->Set(Nan::New("hello").ToLocalChecked(),
+               Nan::New<v8::FunctionTemplate>(Method)->GetFunction());
 }
 
-NODE_MODULE()
+NODE_MODULE(hello, Init)
