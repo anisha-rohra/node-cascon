@@ -14,7 +14,9 @@ void RunCallback(const FunctionCallbackInfo<Value>& args) {
 }
 
 void Init(Handle<Object> exports, Handle<Object> module) {
-  NODE_SET_METHOD(module, "exports", RunCallback);
+  Isolate* isolate = Isolate::GetCurrent();
+  exports->Set(String::NewFromUtf8(isolate, "callback"), 
+               FunctionTemplate::New(isolate, RunCallback)->GetFunction());
 }
 
 NODE_MODULE(addon, Init)
