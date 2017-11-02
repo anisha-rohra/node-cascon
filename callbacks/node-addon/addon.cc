@@ -13,7 +13,7 @@ void RunCallback(const FunctionCallbackInfo<Value>& args) {
 
 }
 
-void Init() {
+void Init(Handle<Object> exports) {
   Isolate* isolate = Isolate::GetCurrent();
   exports->Set(String::NewFromUtf8(isolate, "callback"),
                FunctionTemplate::New(isolate, RunCallback)->GetFunction());
