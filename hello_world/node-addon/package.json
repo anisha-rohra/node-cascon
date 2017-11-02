@@ -1,7 +1,8 @@
 {
   "name": "node-addon-hello-world",
   "version": "1.0.0",
-  "description": "",
+  "description": "cascon workshop 2017",
+  "repository": "https://github.com/anisha-rohra/node-cascon",
   "main": "hello.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
