@@ -23,6 +23,8 @@ Alternatively, if you have [Docker](https://docs.docker.com/engine/installation/
 
 Save the [Dockerfile]([Dockerfile](https://raw.githubusercontent.com/anisha-rohra/node-cascon/master/Dockerfile)) on your system.
 ```bash
-   docker build -t cascon-node .
-   docker run -it cascon-node
+   docker build -t node-cascon .
+   docker run -it node-cascon
 ```
+
+One important caveat if you are building using the docker container is that for `npm install` steps, you need to specify `--unsafe-perm` option in order to allow root to install the npm modules.  Otherwise, you will get an error like: `npm WARN lifecycle ... install: cannot run in wd %s %s (wd=%s) `, and the `npm install` will fail.

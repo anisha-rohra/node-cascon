@@ -4,9 +4,6 @@
   "description": "Node.js Addons Example #3",
   "main": "addon.js",
   "private": true,
-  "config": {
-    "unsafe-perm":true
-  },
   "gypfile": true,
   "dependencies": {
     "bindings": "~1.2.1"
