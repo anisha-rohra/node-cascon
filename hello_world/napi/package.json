@@ -11,5 +11,8 @@
   "scripts": {
     "test": "node hello.js"
   },
+  "config": {
+    "unsafe-perm":true
+  },
   "gypfile": true
 }

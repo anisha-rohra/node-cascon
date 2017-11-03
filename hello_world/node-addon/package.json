@@ -10,6 +10,9 @@
   "dependencies": {
     "bindings": "~1.2.1"
   },
+  "config": {
+    "unsafe-perm":true
+  },
   "author": "",
   "license": "ISC",
   "gypfile": true
