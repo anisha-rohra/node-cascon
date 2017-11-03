@@ -21,7 +21,7 @@ To work with the examples in this project, you will require the following softwa
 
 Alternatively, if you have [Docker](https://docs.docker.com/engine/installation/) on your system, you can build a container from the *[Dockerfile](https://raw.githubusercontent.com/anisha-rohra/node-cascon/master/Dockerfile)* included at the root of this project.
 
-Save the [Dockerfile]([Dockerfile](https://raw.githubusercontent.com/anisha-rohra/node-cascon/master/Dockerfile)) on your system.
+Save the [Dockerfile](https://raw.githubusercontent.com/anisha-rohra/node-cascon/master/Dockerfile) on your system.
 ```bash
    docker build -t node-cascon .
    docker run -it node-cascon
