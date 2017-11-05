@@ -1,0 +1,15 @@
+{
+  "name": "my_addon",
+  "version": "1.0.0",
+  "description": "cascon 2017 native addon demo",
+  "main": "my_addon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bindings": "~1.2.1"
+  },
+  "author": "IBM Runtimes",
+  "license": "ISC",
+  "gypfile": true
+}

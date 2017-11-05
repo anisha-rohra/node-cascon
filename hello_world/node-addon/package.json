@@ -9,6 +9,8 @@
   "dependencies": {
     "bindings": "~1.2.1"
   },
+  "description": "cascon workshop 2017",
+  "repository": "https://github.com/anisha-rohra/node-cascon",
   "author": "",
   "license": "ISC",
   "gypfile": true
