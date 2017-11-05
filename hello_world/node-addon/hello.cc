@@ -3,16 +3,19 @@
 
 using namespace v8;
 
-void Method(const v8::FunctionCallbackInfo<Value>& args) {
-  Isolate* isolate = Isolate::GetCurrent();
-  HandleScope scope(isolate);
-  args.GetReturnValue().Set(String::NewFromUtf8(isolate, "world"));
+void HelloWorldMethod(const v8::FunctionCallbackInfo<Value>& args) {
+  Isolate* v8_engine = Isolate::GetCurrent();
+  HandleScope scope(v8_engine);
+  args.GetReturnValue().Set(String::NewFromUtf8(v8_engine, "hello world"));
 }
 
-void Init(Handle<Object> exports) {
-  Isolate* isolate = Isolate::GetCurrent();
-  exports->Set(String::NewFromUtf8(isolate, "hello"),
-      FunctionTemplate::New(isolate, Method)->GetFunction());
+void HelloWorldInit(Handle<Object> exports) {
+  Isolate* v8_engine = Isolate::GetCurrent();
+  
+  String string = String::New(v8_engine, "hello");
+  FunctionTemplate func = FunctionTemplate::New(v8_engine, HelloWorldMethod)->GetFunction();
+
+  exports->Set(string, func);
 }
 
-NODE_MODULE(hello, Init)
+NODE_MODULE(hello_addon, HelloWorldInit)
