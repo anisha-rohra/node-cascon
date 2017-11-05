@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "hello_world",
+      "target_name": "hello_addon",
       "sources": [ "hello.cc" ],
     }
   ]
