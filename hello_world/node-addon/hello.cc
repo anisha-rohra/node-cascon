@@ -6,8 +6,9 @@ using namespace v8;
 void HelloWorldMethod(const v8::FunctionCallbackInfo<Value>& args) {
   Isolate* v8_engine = Isolate::GetCurrent();
   HandleScope scope(v8_engine);
-  
-  args.GetReturnValue().Set(String::NewFromUtf8(v8_engine, "hello world"));
+ 
+  Local<String> hello_string = String::NewFromUtf8(v8_engine, "hello world"); 
+  args.GetReturnValue().Set(hello_string);
 }
 
 void HelloWorldInit(Handle<Object> exports) {
