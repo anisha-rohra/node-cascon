@@ -6,16 +6,17 @@ using namespace v8;
 void HelloWorldMethod(const v8::FunctionCallbackInfo<Value>& args) {
   Isolate* v8_engine = Isolate::GetCurrent();
   HandleScope scope(v8_engine);
+  
   args.GetReturnValue().Set(String::NewFromUtf8(v8_engine, "hello world"));
 }
 
 void HelloWorldInit(Handle<Object> exports) {
   Isolate* v8_engine = Isolate::GetCurrent();
   
-  String string = String::New(v8_engine, "hello");
-  FunctionTemplate func = FunctionTemplate::New(v8_engine, HelloWorldMethod)->GetFunction();
+  Local<String> js_func = String::NewFromUtf8(v8_engine, "hello");
+  Local<Function> c_func = FunctionTemplate::New(v8_engine, HelloWorldMethod)->GetFunction();
 
-  exports->Set(string, func);
+  exports->Set(js_func, c_func);
 }
 
 NODE_MODULE(hello_addon, HelloWorldInit)
